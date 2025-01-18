@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://rgxskismudrl"
+path="res://.godot/imported/leaving to look towards.wav-ffbe5dfa482f6d9ccc4f0ce0154da454.sample"
+
+[deps]
+
+source_file="res://sounds/music/leaving to look towards.wav"
+dest_files=["res://.godot/imported/leaving to look towards.wav-ffbe5dfa482f6d9ccc4f0ce0154da454.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

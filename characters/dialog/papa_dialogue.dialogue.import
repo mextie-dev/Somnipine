@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://pyuevquph4rj"
+path="res://.godot/imported/papa_dialogue.dialogue-0c857e786e25652f4f1edf617743f25a.tres"
+
+[deps]
+
+source_file="res://characters/dialog/papa_dialogue.dialogue"
+dest_files=["res://.godot/imported/papa_dialogue.dialogue-0c857e786e25652f4f1edf617743f25a.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bpwxmchujvomr"]
+
+[ext_resource type="Texture2D" uid="uid://5qx2jbdoowni" path="res://environment/assets/hd/Dirty_Concrete/Dirty_Concrete.png" id="1_vktur"]
+[ext_resource type="Texture2D" uid="uid://dp0yylvw32jlr" path="res://environment/assets/hd/Dirty_Concrete/Dirty_Concrete_SPEC.png" id="2_ayr71"]
+[ext_resource type="Texture2D" uid="uid://c7fw35qop7t4d" path="res://environment/assets/hd/Dirty_Concrete/Dirty_Concrete_NRM.png" id="3_2xpc5"]
+[ext_resource type="Texture2D" uid="uid://cm8emg5akrr3v" path="res://environment/assets/hd/Dirty_Concrete/Dirty_Concrete_RGH.png" id="4_op6sr"]
+
+[resource]
+albedo_texture = ExtResource("1_vktur")
+metallic = 1.0
+metallic_texture = ExtResource("2_ayr71")
+roughness_texture = ExtResource("4_op6sr")
+normal_enabled = true
+normal_texture = ExtResource("3_2xpc5")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true

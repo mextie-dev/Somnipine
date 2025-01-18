@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://bi8d3aral8v0h"]
+
+[ext_resource type="Script" path="res://environment/door.gd" id="1_yeyqw"]
+[ext_resource type="PackedScene" uid="uid://c32dgixf4ct2m" path="res://environment/assets/hd/DoorExport/DoorFBX.fbx" id="2_qvjod"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d2ggl"]
+size = Vector3(1.69238, 3.25281, 0.450073)
+
+[sub_resource type="Animation" id="Animation_cjtam"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Marker3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iyd0h"]
+resource_name = "open"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Marker3D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_stlqh"]
+_data = {
+"RESET": SubResource("Animation_cjtam"),
+"open": SubResource("Animation_iyd0h")
+}
+
+[node name="RealDoor" type="Node3D"]
+script = ExtResource("1_yeyqw")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Marker3D" groups=["doors"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Marker3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.913891, 0.111267, 0.151206)
+shape = SubResource("BoxShape3D_d2ggl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_stlqh")
+}
+
+[node name="DoorFBX" parent="." instance=ExtResource("2_qvjod")]
+transform = Transform3D(0.22, 0, 0, 0, 0.22, 0, 0, 0, 0.22, 0.84588, 0.262817, 0.241089)

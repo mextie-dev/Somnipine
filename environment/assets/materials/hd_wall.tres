@@ -1,0 +1,27 @@
+[gd_resource type="StandardMaterial3D" load_steps=8 format=3 uid="uid://dl8we3l4o85dd"]
+
+[ext_resource type="Texture2D" uid="uid://dkntjvvrm7nkj" path="res://environment/assets/hd/StripedWallpaper_PbrGenericMetallic2kBitmap/StripedWallpaper_basecolor.png" id="1_3hxgo"]
+[ext_resource type="Texture2D" uid="uid://cqbpm0alykch5" path="res://environment/assets/hd/StripedWallpaper_PbrGenericMetallic2kBitmap/StripedWallpaper_ambientocclusion.png" id="2_grvmf"]
+[ext_resource type="Texture2D" uid="uid://c0fbl1iqp4v1w" path="res://environment/assets/hd/StripedWallpaper_PbrGenericMetallic2kBitmap/StripedWallpaper_emissive.png" id="3_nc0vo"]
+[ext_resource type="Texture2D" uid="uid://yolpc8h240ni" path="res://environment/assets/hd/StripedWallpaper_PbrGenericMetallic2kBitmap/StripedWallpaper_height.png" id="4_7qqep"]
+[ext_resource type="Texture2D" uid="uid://jr6xaq1jrq5e" path="res://environment/assets/hd/StripedWallpaper_PbrGenericMetallic2kBitmap/StripedWallpaper_metallic.png" id="5_4q7wa"]
+[ext_resource type="Texture2D" uid="uid://c0lbonisvce2v" path="res://environment/assets/hd/StripedWallpaper_PbrGenericMetallic2kBitmap/StripedWallpaper_normal.png" id="6_fceo2"]
+[ext_resource type="Texture2D" uid="uid://nw8kq5l8742y" path="res://environment/assets/hd/StripedWallpaper_PbrGenericMetallic2kBitmap/StripedWallpaper_roughness.png" id="7_nawp1"]
+
+[resource]
+albedo_texture = ExtResource("1_3hxgo")
+metallic = 1.0
+metallic_texture = ExtResource("5_4q7wa")
+roughness_texture = ExtResource("7_nawp1")
+emission_enabled = true
+emission_texture = ExtResource("3_nc0vo")
+normal_enabled = true
+normal_scale = 3.97
+normal_texture = ExtResource("6_fceo2")
+ao_enabled = true
+ao_texture = ExtResource("2_grvmf")
+heightmap_enabled = true
+heightmap_texture = ExtResource("4_7qqep")
+uv1_scale = Vector3(0.84, 0.84, 0.84)
+uv1_triplanar = true
+uv1_world_triplanar = true

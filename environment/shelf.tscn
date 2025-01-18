@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://d22e4xamwlta4"]
+
+[ext_resource type="PackedScene" uid="uid://43vbeb46ywh5" path="res://environment/assets/raw_models/Ainsley_6-Drawer_Chest_fbx/FBX_Corona.FBX" id="1_5nxml"]
+[ext_resource type="Material" uid="uid://t283ps7g3lor" path="res://environment/assets/materials/hd_desk.tres" id="2_i1xay"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x3cjk"]
+size = Vector3(1.78809, 1.45996, 0.718262)
+
+[node name="FBX_Corona" instance=ExtResource("1_5nxml")]
+
+[node name="Ainsley" parent="." index="0"]
+material_override = ExtResource("2_i1xay")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0717773, 0.22998, 0.140869)
+shape = SubResource("BoxShape3D_x3cjk")

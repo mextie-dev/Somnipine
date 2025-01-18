@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1sln1m72do2d"]
+
+[ext_resource type="PackedScene" uid="uid://lxjrxuprafnb" path="res://environment/assets/raw_models/model_pills.glb" id="1_utuwr"]
+[ext_resource type="AudioStream" uid="uid://cgyj0bva5638" path="res://sounds/sfx/ClickStartButton.wav" id="2_y6sfw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5qr8"]
+albedo_color = Color(1, 0.537255, 0, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qqbam"]
+data = PackedVector3Array(0, -0.25, -0.3, 0.2345, 0.25, -0.187, 0, 0.25, -0.3, 0, -0.25, -0.3, 0.2345, -0.25, -0.187, 0.2345, 0.25, -0.187, 0.2345, -0.25, -0.187, 0.2925, 0.25, 0.0667, 0.2345, 0.25, -0.187, 0.2345, -0.25, -0.187, 0.2925, -0.25, 0.0667, 0.2925, 0.25, 0.0667, 0.2925, -0.25, 0.0667, 0.1302, 0.25, 0.2703, 0.2925, 0.25, 0.0667, 0.2925, -0.25, 0.0667, 0.1302, -0.25, 0.2703, 0.1302, 0.25, 0.2703, 0.1302, -0.25, 0.2703, -0.1302, 0.25, 0.2703, 0.1302, 0.25, 0.2703, 0.1302, -0.25, 0.2703, -0.1302, -0.25, 0.2703, -0.1302, 0.25, 0.2703, -0.1302, -0.25, 0.2703, -0.2925, 0.25, 0.0667, -0.1302, 0.25, 0.2703, -0.1302, -0.25, 0.2703, -0.2925, -0.25, 0.0667, -0.2925, 0.25, 0.0667, 0.2925, 0.25, 0.0667, 0, 0.25, -0.3, 0.2345, 0.25, -0.187, 0, 0.25, -0.3, -0.2925, 0.25, 0.0667, -0.2345, 0.25, -0.187, -0.2925, 0.25, 0.0667, 0.1302, 0.25, 0.2703, -0.1302, 0.25, 0.2703, 0.1302, 0.25, 0.2703, 0, 0.25, -0.3, 0.2925, 0.25, 0.0667, 0, 0.25, -0.3, 0.1302, 0.25, 0.2703, -0.2925, 0.25, 0.0667, -0.2925, -0.25, 0.0667, -0.2345, 0.25, -0.187, -0.2925, 0.25, 0.0667, -0.2925, -0.25, 0.0667, -0.2345, -0.25, -0.187, -0.2345, 0.25, -0.187, -0.2345, -0.25, -0.187, 0, 0.25, -0.3, -0.2345, 0.25, -0.187, -0.2345, -0.25, -0.187, 0, -0.25, -0.3, 0, 0.25, -0.3, -0.2345, -0.25, -0.187, 0.2345, -0.25, -0.187, 0, -0.25, -0.3, 0.2345, -0.25, -0.187, 0.1302, -0.25, 0.2703, 0.2925, -0.25, 0.0667, 0.1302, -0.25, 0.2703, -0.2925, -0.25, 0.0667, -0.1302, -0.25, 0.2703, -0.2925, -0.25, 0.0667, 0.2345, -0.25, -0.187, -0.2345, -0.25, -0.187, 0.2345, -0.25, -0.187, -0.2925, -0.25, 0.0667, 0.1302, -0.25, 0.2703)
+
+[node name="Pills" instance=ExtResource("1_utuwr")]
+
+[node name="Cylinder" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_y5qr8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cylinder" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder/StaticBody3D" index="0"]
+transform = Transform3D(1.89, 0, 0, 0, 1.89, 0, 0, 0, 1.89, 0, 0.155983, 0)
+shape = SubResource("ConcavePolygonShape3D_qqbam")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
+stream = ExtResource("2_y6sfw")

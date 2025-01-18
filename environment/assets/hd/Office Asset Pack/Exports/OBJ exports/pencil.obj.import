@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dcgu6t5jjee6g"
+path="res://.godot/imported/pencil.obj-24b6ec0c26fa2e124d3f9ea235927884.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pencil.obj-24b6ec0c26fa2e124d3f9ea235927884.mesh"]
+
+source_file="res://environment/assets/hd/Office Asset Pack/Exports/OBJ exports/pencil.obj"
+dest_files=["res://.godot/imported/pencil.obj-24b6ec0c26fa2e124d3f9ea235927884.mesh", "res://.godot/imported/pencil.obj-24b6ec0c26fa2e124d3f9ea235927884.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

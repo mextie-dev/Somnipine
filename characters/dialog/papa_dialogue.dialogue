@@ -1,0 +1,70 @@
+~ start
+
+if Global.hasTalkedToPapa:
+	if Global.thingsCollected < 1:
+		Papa: You have not gotten any things yet.
+
+if !Global.hasTalkedToPapa:
+	Papa: [[Hello again.|Are you really not out yet?|I can't believe they let you back in here]].
+	Papa: Find me my things. There are 4 missing. Return them to me.
+	set Global.hasTalkedToPapa = true
+
+if Global.thingsCollected == 1:
+	if Global.choseEnding == true:
+		Papa: ...
+		=> END
+	Papa: You found one of them.
+	Papa: Do you know what these are?
+	- I do
+		set Global.chosenEnding = 0
+		Papa: Then why do you still have them?
+		Papa: You of all people know you don't need these anymore.
+		Papa: And yet you still take them.
+		Papa: Why?
+		- They help
+			Papa: I'm sure you think so.
+		- Force of habit
+			Papa: I appriciate your honesty.
+		Papa: If you want, you can go. It's over for now.
+		Papa: Goodbye.
+		set Global.choseEnding = true
+		
+		=> END
+	- I don't
+		set Global.chosenEnding = 1
+		Papa: Liar.
+		Papa: You're an adult, you can make your own choices.
+		Papa: But I sincerely hope I don't see you here tomorrow.
+		Papa: And know this: the ease with which I see through your lies
+		Papa: is not just my own preciense.
+		Papa: Everyone knows.
+		Papa: Good morning.
+		set Global.choseEnding = true
+		
+		=> END
+	- I didn't look at them
+		set Global.chosenEnding = 2
+		Papa: ...
+		Papa: See you tomorrow.
+		set Global.choseEnding = true
+		
+		=> END
+	
+	
+	
+	
+	
+	
+	
+if Global.thingsCollected == 2:
+	Papa: You have collected two things.
+if Global.thingsCollected == 3:
+	Papa: You have collected three things.
+if Global.thingsCollected == 4:
+	Papa: You have collected four things.
+if Global.thingsCollected > 4:
+	Papa: how the fuck did you get more than four things
+
+
+
+=> END

@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdxaps2y8olan"]
+
+[ext_resource type="PackedScene" uid="uid://0468bbw7jwpt" path="res://environment/assets/raw_models/BureauHighPoly.fbx" id="1_rkfxy"]
+[ext_resource type="Texture2D" uid="uid://b7jedi8vmavcl" path="res://environment/assets/hd/desk /Wood048_8K_Color.jpg" id="2_po6iu"]
+[ext_resource type="Material" uid="uid://t283ps7g3lor" path="res://environment/assets/materials/hd_desk.tres" id="3_efcgv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g0hst"]
+albedo_texture = ExtResource("2_po6iu")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e1apw"]
+size = Vector3(0.72, 1, 1.54)
+
+[node name="BureauHighPoly" instance=ExtResource("1_rkfxy")]
+
+[node name="PlanchesPieds_001" parent="." index="0"]
+material_override = ExtResource("3_efcgv")
+surface_material_override/0 = SubResource("StandardMaterial3D_g0hst")
+
+[node name="Porte1G_001" parent="PlanchesPieds_001" index="0"]
+material_override = ExtResource("3_efcgv")
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="CerclagePorte_002" parent="PlanchesPieds_001/Porte1G_001" index="0"]
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="TirroirClavier_001" parent="PlanchesPieds_001" index="1"]
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="Plateau_001" parent="PlanchesPieds_001" index="2"]
+material_override = ExtResource("3_efcgv")
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="CerclagePiedsD_001" parent="PlanchesPieds_001" index="3"]
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="PiedsD_001" parent="PlanchesPieds_001/CerclagePiedsD_001" index="0"]
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="Tirroir3D_001" parent="PlanchesPieds_001" index="4"]
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="PlancheSeparation2G_001" parent="PlanchesPieds_001" index="5"]
+material_override = ExtResource("3_efcgv")
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="Tirroir1G_001" parent="PlanchesPieds_001" index="6"]
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="PlancheSeparation3D_001" parent="PlanchesPieds_001" index="7"]
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="PlancheSeparation3G_001" parent="PlanchesPieds_001" index="8"]
+material_override = ExtResource("3_efcgv")
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="Tirroir2D_001" parent="PlanchesPieds_001" index="9"]
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="Tirroir1D_001" parent="PlanchesPieds_001" index="10"]
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="PlancheSeparation4D_001" parent="PlanchesPieds_001" index="11"]
+material_override = ExtResource("3_efcgv")
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="PlancheSeparation2D_001" parent="PlanchesPieds_001" index="12"]
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="CerclagePiedsG_001" parent="PlanchesPieds_001" index="13"]
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="PiedsG_001" parent="PlanchesPieds_001/CerclagePiedsG_001" index="0"]
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="PlancheSeparation1G_001" parent="PlanchesPieds_001" index="14"]
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="PlancheSeparation1D_001" parent="PlanchesPieds_001" index="15"]
+surface_material_override/0 = ExtResource("3_efcgv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.519692, 0)
+shape = SubResource("BoxShape3D_e1apw")

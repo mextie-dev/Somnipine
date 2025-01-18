@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfl3pc5720cjm"]
+
+[ext_resource type="PackedScene" uid="uid://vlypi2c33khg" path="res://environment/assets/raw_models/door_plain.glb" id="1_ljoar"]
+[ext_resource type="Material" uid="uid://7vnh18i2raxb" path="res://environment/assets/materials/wood.tres" id="2_2ausw"]
+[ext_resource type="Material" uid="uid://f2eiiubehd5o" path="res://environment/assets/materials/door.tres" id="3_u8tyx"]
+
+[node name="door_plain" instance=ExtResource("1_ljoar")]
+
+[node name="Door_Frame" parent="." index="0"]
+visible = false
+material_override = ExtResource("2_2ausw")
+
+[node name="Door" parent="." index="1"]
+material_override = ExtResource("3_u8tyx")

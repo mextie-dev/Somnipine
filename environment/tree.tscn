@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2u8p2mkrgkws"]
+
+[ext_resource type="PackedScene" uid="uid://dtogeqvfc6s0b" path="res://environment/assets/raw_models/model_tree_fall.glb" id="1_6wvk5"]
+[ext_resource type="Material" uid="uid://ujx7jm0asa8v" path="res://environment/assets/materials/bark.tres" id="2_w8mdl"]
+[ext_resource type="Material" uid="uid://5deqn4exymv6" path="res://environment/assets/materials/leaves.tres" id="3_3dlq1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ahg7"]
+size = Vector3(1.51227, 2, 1.5293)
+
+[node name="Tree" instance=ExtResource("1_6wvk5")]
+
+[node name="trunk" parent="." index="0"]
+material_override = ExtResource("2_w8mdl")
+
+[node name="leaves" parent="." index="1"]
+material_override = ExtResource("3_3dlq1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.040863, 0.675, -0.0146484)
+shape = SubResource("BoxShape3D_3ahg7")

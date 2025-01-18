@@ -1,0 +1,88 @@
+[gd_scene load_steps=2 format=3 uid="uid://8of4cxsq323q"]
+
+[ext_resource type="Texture2D" uid="uid://cx7033wxrt087" path="res://environment/assets/textures/grass_blade.png" id="1_bhjqj"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Grass" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.616343, 0)
+billboard = 2
+shaded = true
+texture = ExtResource("1_bhjqj")
+
+[node name="Grass2" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 3, 0.616343, 3)
+billboard = 2
+shaded = true
+texture_filter = 2
+texture = ExtResource("1_bhjqj")
+
+[node name="Grass3" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 5, 0.616343, -3)
+billboard = 2
+shaded = true
+texture_filter = 2
+texture = ExtResource("1_bhjqj")
+
+[node name="Grass4" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.616343, -7)
+billboard = 2
+shaded = true
+texture_filter = 2
+texture = ExtResource("1_bhjqj")
+
+[node name="Grass5" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6, 0.616343, -5)
+billboard = 2
+shaded = true
+texture_filter = 2
+texture = ExtResource("1_bhjqj")
+
+[node name="Grass6" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3, 0.616343, -3)
+billboard = 2
+shaded = true
+texture_filter = 2
+texture = ExtResource("1_bhjqj")
+
+[node name="Grass7" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6, 0.616343, 4)
+billboard = 2
+shaded = true
+texture_filter = 2
+texture = ExtResource("1_bhjqj")
+
+[node name="Grass8" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -2, 0.616343, 6)
+billboard = 2
+shaded = true
+texture_filter = 2
+texture = ExtResource("1_bhjqj")
+
+[node name="Grass9" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4, 0.616343, 2)
+billboard = 2
+shaded = true
+texture_filter = 2
+texture = ExtResource("1_bhjqj")
+
+[node name="Grass10" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 5, 0.616343, 5)
+billboard = 2
+shaded = true
+texture_filter = 2
+texture = ExtResource("1_bhjqj")
+
+[node name="Grass11" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 6, 0.616343, -6)
+billboard = 2
+shaded = true
+texture_filter = 2
+texture = ExtResource("1_bhjqj")
+
+[node name="Grass12" type="Sprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3, 0.616343, 1)
+billboard = 2
+shaded = true
+texture_filter = 2
+texture = ExtResource("1_bhjqj")

@@ -1,0 +1,70 @@
+[gd_scene load_steps=17 format=3 uid="uid://6py3frqfe3jh"]
+
+[ext_resource type="PackedScene" uid="uid://l3lky48aejyb" path="res://environment/assets/raw_models/bed.fbx" id="1_ui0eo"]
+[ext_resource type="Texture2D" uid="uid://dkae5umhv55ck" path="res://environment/assets/hd/bedtextures/legs/legs_col_4k.png" id="2_eoai5"]
+[ext_resource type="Texture2D" uid="uid://co6cwcaowj8e1" path="res://environment/assets/hd/bedtextures/legs/legs_bump_4k.png" id="3_0wvqu"]
+[ext_resource type="Texture2D" uid="uid://0vosflc370pb" path="res://environment/assets/hd/bedtextures/mattress/mattress_bump_4k.png" id="3_l5tow"]
+[ext_resource type="Texture2D" uid="uid://bsekvb2tvtlou" path="res://environment/assets/hd/bedtextures/mattress/mattress_col_2k.png" id="6_f3sxo"]
+[ext_resource type="Texture2D" uid="uid://mnf3nsamia4d" path="res://environment/assets/hd/bedtextures/bed/bed_col_4k.png" id="6_ub0vn"]
+[ext_resource type="Texture2D" uid="uid://bnr54lwi3qej6" path="res://environment/assets/hd/bedtextures/mattress/mattress_bump_2k.png" id="7_sktes"]
+[ext_resource type="Texture2D" uid="uid://hl4efy8d5ukk" path="res://environment/assets/hd/bedtextures/bed/bed_bump_4k.png" id="7_wuf8s"]
+[ext_resource type="Texture2D" uid="uid://beqh14apmaf8w" path="res://environment/assets/hd/bedtextures/pillow_duvet/pillow_col_4k.png" id="8_r20e0"]
+[ext_resource type="Texture2D" uid="uid://ch2kg84cjfimf" path="res://environment/assets/hd/bedtextures/pillow_duvet/pillow_col_2k.png" id="8_ytgar"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwcpo"]
+albedo_texture = ExtResource("6_ub0vn")
+normal_enabled = true
+normal_texture = ExtResource("7_wuf8s")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54fo1"]
+albedo_texture = ExtResource("2_eoai5")
+normal_enabled = true
+normal_texture = ExtResource("3_0wvqu")
+heightmap_texture = ExtResource("3_0wvqu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lf86q"]
+albedo_texture = ExtResource("6_f3sxo")
+normal_enabled = true
+normal_texture = ExtResource("7_sktes")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6dqrm"]
+albedo_texture = ExtResource("8_ytgar")
+normal_enabled = true
+normal_scale = -1.0
+normal_texture = ExtResource("3_l5tow")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qq5p2"]
+albedo_texture = ExtResource("8_r20e0")
+normal_enabled = true
+normal_scale = -1.0
+normal_texture = ExtResource("3_l5tow")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4l00f"]
+size = Vector3(2.42517, 1, 1.31055)
+
+[node name="bed" instance=ExtResource("1_ui0eo")]
+
+[node name="Cube_001" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_cwcpo")
+
+[node name="Cylinder_016" parent="Cube_001" index="0"]
+material_override = SubResource("StandardMaterial3D_54fo1")
+
+[node name="Cube_002" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_lf86q")
+
+[node name="Cube_042" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_6dqrm")
+
+[node name="Cube_045" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6dqrm")
+
+[node name="Plane_022" parent="." index="4"]
+material_override = SubResource("StandardMaterial3D_qq5p2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.807462)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.180359, 0.382981, 0.155273)
+shape = SubResource("BoxShape3D_4l00f")

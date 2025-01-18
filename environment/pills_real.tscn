@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn03n88dg27aw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5p8ba"]
+albedo_color = Color(0.991103, 0.502261, 0.343057, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_obsqn"]
+height = 1.25
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rusun"]
+top_radius = 0.6
+bottom_radius = 0.6
+height = 0.39
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bfkxi"]
+top_radius = 0.4
+bottom_radius = 0.4
+height = 0.39
+
+[node name="PillsReal" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_5p8ba")
+mesh = SubResource("CylinderMesh_obsqn")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.639619, 0)
+mesh = SubResource("CylinderMesh_rusun")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.83204, 0)
+mesh = SubResource("CylinderMesh_bfkxi")

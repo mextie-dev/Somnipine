@@ -1,0 +1,321 @@
+[gd_scene load_steps=14 format=3 uid="uid://kt3ybpjvi62b"]
+
+[ext_resource type="FontFile" uid="uid://kcu6od6cleq6" path="res://ui/assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf" id="1_tbh1h"]
+[ext_resource type="Script" path="res://ui/scripts/title_screen.gd" id="1_xhbod"]
+[ext_resource type="Script" path="res://ui/scripts/mainui_audio_manager.gd" id="3_3tgha"]
+[ext_resource type="AudioStream" uid="uid://r6f36yxdlw2t" path="res://sounds/sfx/MouseOverUIButton.wav" id="4_4l6g5"]
+[ext_resource type="AudioStream" uid="uid://mi1x10yqkr7x" path="res://sounds/sfx/ClickUIButton.wav" id="5_7so6y"]
+[ext_resource type="AudioStream" uid="uid://cfsm8tqbeiacs" path="res://sounds/sfx/SliderClick.wav" id="5_lihoe"]
+[ext_resource type="AudioStream" uid="uid://bd00b185y6jjc" path="res://sounds/sfx/ClickUIButtonAlt.wav" id="6_3x6eb"]
+[ext_resource type="AudioStream" uid="uid://cgyj0bva5638" path="res://sounds/sfx/ClickStartButton.wav" id="7_iotbo"]
+
+[sub_resource type="Animation" id="Animation_mnm43"]
+resource_name = "HIDEALL"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainControls:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AmbienTitle:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_w63cq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AmbienTitle:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainControls:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainControls:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AmbienTitle:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_kjj4b"]
+resource_name = "fadeIn"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AmbienTitle:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.4, 6.63333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainControls:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 8.26155, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hvl2w"]
+resource_name = "fadeOut"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainControls:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AmbienTitle:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_muatk"]
+_data = {
+"HIDEALL": SubResource("Animation_mnm43"),
+"RESET": SubResource("Animation_w63cq"),
+"fadeIn": SubResource("Animation_kjj4b"),
+"fadeOut": SubResource("Animation_hvl2w")
+}
+
+[node name="MainUI" type="Node2D"]
+script = ExtResource("1_xhbod")
+
+[node name="AmbienTitle" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 8.0
+offset_right = 849.0
+offset_bottom = 315.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_tbh1h")
+theme_override_font_sizes/font_size = 61
+text = "Somnipine"
+
+[node name="Back" type="Button" parent="."]
+process_mode = 3
+visible = false
+offset_left = 169.0
+offset_top = 108.0
+offset_right = 215.0
+offset_bottom = 139.0
+text = "Back"
+
+[node name="BackFromPause" type="Button" parent="."]
+process_mode = 3
+visible = false
+offset_left = 169.0
+offset_top = 108.0
+offset_right = 215.0
+offset_bottom = 139.0
+text = "Back"
+
+[node name="Options" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Fullscreen" type="Button" parent="Options"]
+process_mode = 3
+layout_mode = 0
+offset_left = 16.0
+offset_top = 108.0
+offset_right = 103.0
+offset_bottom = 139.0
+text = "Fullscreen"
+
+[node name="AudioVolume" type="Button" parent="Options"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 153.0
+offset_right = 132.0
+offset_bottom = 184.0
+disabled = true
+button_mask = 0
+text = "Audio Volume"
+
+[node name="AudioVolumeSlider" type="HSlider" parent="Options/AudioVolume"]
+process_mode = 3
+layout_mode = 0
+offset_top = 37.0
+offset_right = 115.0
+offset_bottom = 55.0
+max_value = 76.0
+value = 70.0
+
+[node name="MouseSens" type="Button" parent="Options"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 153.0
+offset_right = 312.0
+offset_bottom = 184.0
+disabled = true
+button_mask = 0
+text = "Mouse Sensitivity"
+
+[node name="MouseSensSlider" type="HSlider" parent="Options/MouseSens"]
+process_mode = 3
+layout_mode = 0
+offset_top = 37.0
+offset_right = 115.0
+offset_bottom = 55.0
+min_value = 5.0
+value = 50.0
+
+[node name="MainControls" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartButton" type="Button" parent="MainControls"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 108.0
+offset_right = 62.0
+offset_bottom = 139.0
+text = "Start"
+
+[node name="Quit" type="Button" parent="MainControls"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 148.0
+offset_right = 62.0
+offset_bottom = 179.0
+text = "Quit"
+
+[node name="Options" type="Button" parent="MainControls"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 188.0
+offset_right = 86.0
+offset_bottom = 219.0
+text = "Options"
+
+[node name="AudioManager" type="Node" parent="."]
+script = ExtResource("3_3tgha")
+
+[node name="MouseOverButton" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("4_4l6g5")
+max_polyphony = 10
+
+[node name="ClickButton" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("5_7so6y")
+
+[node name="ClickButtonPlaying" type="AudioStreamPlayer" parent="AudioManager/ClickButton"]
+stream = ExtResource("6_3x6eb")
+
+[node name="ClickStart" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("7_iotbo")
+
+[node name="SliderClicks" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("5_lihoe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_muatk")
+}
+autoplay = "fadeIn"
+
+[node name="FadeOutTimer" type="Timer" parent="AnimationPlayer"]
+wait_time = 6.0
+one_shot = true
+
+[connection signal="mouse_entered" from="Back" to="AudioManager" method="playMouseOverButton"]
+[connection signal="pressed" from="Back" to="." method="exitOptions"]
+[connection signal="pressed" from="Back" to="AudioManager" method="playClickButton"]
+[connection signal="mouse_entered" from="BackFromPause" to="AudioManager" method="playMouseOverButton"]
+[connection signal="pressed" from="BackFromPause" to="." method="exitOptionsFromPause"]
+[connection signal="pressed" from="BackFromPause" to="AudioManager" method="playClickButton"]
+[connection signal="mouse_entered" from="Options/Fullscreen" to="AudioManager" method="playMouseOverButton"]
+[connection signal="pressed" from="Options/Fullscreen" to="." method="fullscreen"]
+[connection signal="pressed" from="Options/Fullscreen" to="AudioManager" method="playClickButton"]
+[connection signal="value_changed" from="Options/AudioVolume/AudioVolumeSlider" to="." method="setMasterAudioVolume"]
+[connection signal="value_changed" from="Options/AudioVolume/AudioVolumeSlider" to="AudioManager" method="playSliderClicks"]
+[connection signal="value_changed" from="Options/MouseSens/MouseSensSlider" to="." method="setMouseSensitivity"]
+[connection signal="value_changed" from="Options/MouseSens/MouseSensSlider" to="AudioManager" method="playSliderClicks"]
+[connection signal="mouse_entered" from="MainControls/StartButton" to="AudioManager" method="playMouseOverButton"]
+[connection signal="pressed" from="MainControls/StartButton" to="." method="startPressed"]
+[connection signal="pressed" from="MainControls/StartButton" to="AudioManager" method="playClickStartButton"]
+[connection signal="mouse_entered" from="MainControls/Quit" to="AudioManager" method="playMouseOverButton"]
+[connection signal="pressed" from="MainControls/Quit" to="." method="quit"]
+[connection signal="pressed" from="MainControls/Quit" to="AudioManager" method="playClickButton"]
+[connection signal="mouse_entered" from="MainControls/Options" to="AudioManager" method="playMouseOverButton"]
+[connection signal="pressed" from="MainControls/Options" to="." method="enterOptions"]
+[connection signal="pressed" from="MainControls/Options" to="AudioManager" method="playClickButton"]
+[connection signal="timeout" from="AnimationPlayer/FadeOutTimer" to="." method="hideAll"]

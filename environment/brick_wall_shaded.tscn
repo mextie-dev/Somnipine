@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq5lw6popixa2"]
+
+[ext_resource type="PackedScene" uid="uid://dsekfjnht6mpe" path="res://environment/assets/raw_models/model_walla.glb" id="1_mrrre"]
+[ext_resource type="Material" uid="uid://dn8w1gkjiln7c" path="res://environment/assets/materials/bricks_shaded.tres" id="2_etkmn"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pwr2h"]
+data = PackedVector3Array(-5, -5, 5, -5, 5, -5, -5, 5, 5, -5, -5, 5, -5, -5, -5, -5, 5, -5, -5, -5, -5, 5, 5, -5, -5, 5, -5, -5, -5, -5, 5, -5, -5, 5, 5, -5, 5, -5, -5, 5, 5, 5, 5, 5, -5, 5, -5, -5, 5, -5, 5, 5, 5, 5, 5, -5, 5, -5, 5, 5, 5, 5, 5, 5, -5, 5, -5, -5, 5, -5, 5, 5, -5, -5, -5, 5, -5, 5, 5, -5, -5, -5, -5, -5, -5, -5, 5, 5, -5, 5, 5, 5, -5, -5, 5, 5, -5, 5, -5, 5, 5, -5, 5, 5, 5, -5, 5, 5)
+
+[node name="brick_wall_shaded" instance=ExtResource("1_mrrre")]
+
+[node name="Cube" parent="." index="0"]
+material_override = ExtResource("2_etkmn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_pwr2h")

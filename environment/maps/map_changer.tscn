@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://4fje0w0tc7nv"]
+
+[ext_resource type="Script" path="res://environment/maps/map_changer.gd" id="1_u4jhv"]
+
+[node name="MapChanger" type="Node2D"]
+script = ExtResource("1_u4jhv")
+
+[node name="ChangeToWaterRoom" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "water_room"
+
+[node name="ChangeToRoadRoom" type="Button" parent="."]
+offset_top = 30.0
+offset_right = 102.0
+offset_bottom = 61.0
+text = "road_room"
+
+[node name="ChangeToTestRoom" type="Button" parent="."]
+offset_top = 60.0
+offset_right = 102.0
+offset_bottom = 91.0
+text = "test_room"
+
+[node name="ChangeToLibraryRoom" type="Button" parent="."]
+offset_top = 90.0
+offset_right = 102.0
+offset_bottom = 121.0
+text = "library_room"
+
+[node name="ChangeToDockRoom" type="Button" parent="."]
+offset_top = 120.0
+offset_right = 108.0
+offset_bottom = 151.0
+text = "dock_room"
+
+[node name="ChangeToRainyRoom" type="Button" parent="."]
+offset_top = 150.0
+offset_right = 108.0
+offset_bottom = 181.0
+text = "rainy_room"
+
+[node name="ChangeToEndingRoomCutscene" type="Button" parent="."]
+offset_left = 145.0
+offset_top = 10.0
+offset_right = 253.0
+offset_bottom = 41.0
+text = "ending_room_cutscene"
+
+[node name="ChangeToEndingRoom" type="Button" parent="."]
+offset_left = 145.0
+offset_top = 40.0
+offset_right = 253.0
+offset_bottom = 71.0
+text = "ending_room"
+
+[node name="ChangeToCredits" type="Button" parent="."]
+offset_left = 145.0
+offset_top = 70.0
+offset_right = 253.0
+offset_bottom = 101.0
+text = "credits"
+
+[connection signal="pressed" from="ChangeToWaterRoom" to="." method="changeToWaterRoom"]
+[connection signal="pressed" from="ChangeToRoadRoom" to="." method="changeToRoadRoom"]
+[connection signal="pressed" from="ChangeToTestRoom" to="." method="changeToTestRoom"]
+[connection signal="pressed" from="ChangeToLibraryRoom" to="." method="changeToLibrary"]
+[connection signal="pressed" from="ChangeToDockRoom" to="." method="changeToDockRoom"]
+[connection signal="pressed" from="ChangeToRainyRoom" to="." method="changeToRainyRoom"]
+[connection signal="pressed" from="ChangeToEndingRoomCutscene" to="." method="changeToEndingRoomCutscene"]
+[connection signal="pressed" from="ChangeToEndingRoom" to="." method="changeToEndingRoom"]
+[connection signal="pressed" from="ChangeToCredits" to="." method="changeToCreditsRoom"]

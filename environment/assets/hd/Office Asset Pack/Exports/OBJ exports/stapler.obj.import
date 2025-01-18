@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b7tiqam7kgasn"
+path="res://.godot/imported/stapler.obj-32015446446da3a7fcfac07d09350597.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stapler.obj-32015446446da3a7fcfac07d09350597.mesh"]
+
+source_file="res://environment/assets/hd/Office Asset Pack/Exports/OBJ exports/stapler.obj"
+dest_files=["res://.godot/imported/stapler.obj-32015446446da3a7fcfac07d09350597.mesh", "res://.godot/imported/stapler.obj-32015446446da3a7fcfac07d09350597.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

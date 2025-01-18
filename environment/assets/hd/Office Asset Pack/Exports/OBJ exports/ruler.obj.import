@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dtf3y7khal5b3"
+path="res://.godot/imported/ruler.obj-9b89c5e11cb9133f0a92008f4fa2643e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ruler.obj-9b89c5e11cb9133f0a92008f4fa2643e.mesh"]
+
+source_file="res://environment/assets/hd/Office Asset Pack/Exports/OBJ exports/ruler.obj"
+dest_files=["res://.godot/imported/ruler.obj-9b89c5e11cb9133f0a92008f4fa2643e.mesh", "res://.godot/imported/ruler.obj-9b89c5e11cb9133f0a92008f4fa2643e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

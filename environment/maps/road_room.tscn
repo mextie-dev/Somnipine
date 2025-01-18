@@ -1,0 +1,1130 @@
+[gd_scene load_steps=52 format=3 uid="uid://daymsfccemole"]
+
+[ext_resource type="PackedScene" uid="uid://cfqctrrnsq44h" path="res://environment/grass_floor.tscn" id="1_japhr"]
+[ext_resource type="Texture2D" uid="uid://ll7qxgb35w2r" path="res://environment/assets/textures/tumblr_ney5ngkF8e1rrftcdo2_400.jpg" id="1_myp6e"]
+[ext_resource type="Script" path="res://environment/maps/road_room.gd" id="1_r0rno"]
+[ext_resource type="PackedScene" uid="uid://cuymivutdkbe7" path="res://characters/player/player.tscn" id="2_whnt6"]
+[ext_resource type="Material" uid="uid://bisx0gxxg3e16" path="res://environment/assets/materials/bricks.tres" id="4_ofbm4"]
+[ext_resource type="PackedScene" uid="uid://8vkgmakbmegt" path="res://environment/brick_wall.tscn" id="5_a2jeg"]
+[ext_resource type="PackedScene" uid="uid://cd80t3mgnyai" path="res://environment/castle_open.tscn" id="5_gx164"]
+[ext_resource type="Script" path="res://environment/maps/label.gd" id="6_ht72e"]
+[ext_resource type="AudioStream" uid="uid://c1602tig8x50q" path="res://sounds/sfx/bell.wav" id="8_jhvf5"]
+[ext_resource type="AudioStream" uid="uid://c8f7tulho5ts2" path="res://sounds/ambience/birds.ogg" id="8_qbgt1"]
+[ext_resource type="PackedScene" uid="uid://cq5lw6popixa2" path="res://environment/brick_wall_shaded.tscn" id="8_x3nuk"]
+[ext_resource type="AudioStream" uid="uid://jq6nklwnfkh1" path="res://sounds/sfx/BellChoir.wav" id="9_wu4v3"]
+[ext_resource type="FontFile" uid="uid://kcu6od6cleq6" path="res://ui/assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf" id="10_an0cb"]
+[ext_resource type="Script" path="res://environment/maps/bell_ringers.gd" id="10_fb502"]
+[ext_resource type="AudioStream" uid="uid://ycl76gl6tvat" path="res://sounds/ambience/melody.wav" id="10_rasvf"]
+[ext_resource type="PackedScene" uid="uid://8of4cxsq323q" path="res://environment/grass.tscn" id="13_4cbm4"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_s2fu7"]
+panorama = ExtResource("1_myp6e")
+
+[sub_resource type="Sky" id="Sky_hucl1"]
+sky_material = SubResource("PanoramaSkyMaterial_s2fu7")
+
+[sub_resource type="Environment" id="Environment_k4asj"]
+background_mode = 2
+sky = SubResource("Sky_hucl1")
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(1, 1, 1, 1)
+fog_density = 1.0
+fog_depth_begin = 1.0
+fog_depth_end = 1.0
+volumetric_fog_density = 0.0553
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wlulq"]
+size = Vector3(7.73, 2.57, 9.12)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2ky5a"]
+top_radius = 15.0
+bottom_radius = 15.0
+height = 10.0
+radial_segments = 12
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_epmb0"]
+data = PackedVector3Array(0, 5, 15, 7.5, 5, 12.9904, 0, 3, 15, 7.5, 5, 12.9904, 7.5, 3, 12.9904, 0, 3, 15, 7.5, 5, 12.9904, 12.9904, 5, 7.5, 7.5, 3, 12.9904, 12.9904, 5, 7.5, 12.9904, 3, 7.5, 7.5, 3, 12.9904, 12.9904, 5, 7.5, 15, 5, 0, 12.9904, 3, 7.5, 15, 5, 0, 15, 3, 0, 12.9904, 3, 7.5, 15, 5, 0, 12.9904, 5, -7.5, 15, 3, 0, 12.9904, 5, -7.5, 12.9904, 3, -7.5, 15, 3, 0, 12.9904, 5, -7.5, 7.5, 5, -12.9904, 12.9904, 3, -7.5, 7.5, 5, -12.9904, 7.5, 3, -12.9904, 12.9904, 3, -7.5, 7.5, 5, -12.9904, 0, 5, -15, 7.5, 3, -12.9904, 0, 5, -15, 0, 3, -15, 7.5, 3, -12.9904, 0, 5, -15, -7.5, 5, -12.9904, 0, 3, -15, -7.5, 5, -12.9904, -7.5, 3, -12.9904, 0, 3, -15, -7.5, 5, -12.9904, -12.9904, 5, -7.5, -7.5, 3, -12.9904, -12.9904, 5, -7.5, -12.9904, 3, -7.5, -7.5, 3, -12.9904, -12.9904, 5, -7.5, -15, 5, 0, -12.9904, 3, -7.5, -15, 5, 0, -15, 3, 0, -12.9904, 3, -7.5, -15, 5, 0, -12.9904, 5, 7.5, -15, 3, 0, -12.9904, 5, 7.5, -12.9904, 3, 7.5, -15, 3, 0, -12.9904, 5, 7.5, -7.5, 5, 12.9904, -12.9904, 3, 7.5, -7.5, 5, 12.9904, -7.5, 3, 12.9904, -12.9904, 3, 7.5, -7.5, 5, 12.9904, 0, 5, 15, -7.5, 3, 12.9904, 0, 5, 15, 0, 3, 15, -7.5, 3, 12.9904, 0, 3, 15, 7.5, 3, 12.9904, 0, 1, 15, 7.5, 3, 12.9904, 7.5, 1, 12.9904, 0, 1, 15, 7.5, 3, 12.9904, 12.9904, 3, 7.5, 7.5, 1, 12.9904, 12.9904, 3, 7.5, 12.9904, 1, 7.5, 7.5, 1, 12.9904, 12.9904, 3, 7.5, 15, 3, 0, 12.9904, 1, 7.5, 15, 3, 0, 15, 1, 0, 12.9904, 1, 7.5, 15, 3, 0, 12.9904, 3, -7.5, 15, 1, 0, 12.9904, 3, -7.5, 12.9904, 1, -7.5, 15, 1, 0, 12.9904, 3, -7.5, 7.5, 3, -12.9904, 12.9904, 1, -7.5, 7.5, 3, -12.9904, 7.5, 1, -12.9904, 12.9904, 1, -7.5, 7.5, 3, -12.9904, 0, 3, -15, 7.5, 1, -12.9904, 0, 3, -15, 0, 1, -15, 7.5, 1, -12.9904, 0, 3, -15, -7.5, 3, -12.9904, 0, 1, -15, -7.5, 3, -12.9904, -7.5, 1, -12.9904, 0, 1, -15, -7.5, 3, -12.9904, -12.9904, 3, -7.5, -7.5, 1, -12.9904, -12.9904, 3, -7.5, -12.9904, 1, -7.5, -7.5, 1, -12.9904, -12.9904, 3, -7.5, -15, 3, 0, -12.9904, 1, -7.5, -15, 3, 0, -15, 1, 0, -12.9904, 1, -7.5, -15, 3, 0, -12.9904, 3, 7.5, -15, 1, 0, -12.9904, 3, 7.5, -12.9904, 1, 7.5, -15, 1, 0, -12.9904, 3, 7.5, -7.5, 3, 12.9904, -12.9904, 1, 7.5, -7.5, 3, 12.9904, -7.5, 1, 12.9904, -12.9904, 1, 7.5, -7.5, 3, 12.9904, 0, 3, 15, -7.5, 1, 12.9904, 0, 3, 15, 0, 1, 15, -7.5, 1, 12.9904, 0, 1, 15, 7.5, 1, 12.9904, 0, -1, 15, 7.5, 1, 12.9904, 7.5, -1, 12.9904, 0, -1, 15, 7.5, 1, 12.9904, 12.9904, 1, 7.5, 7.5, -1, 12.9904, 12.9904, 1, 7.5, 12.9904, -1, 7.5, 7.5, -1, 12.9904, 12.9904, 1, 7.5, 15, 1, 0, 12.9904, -1, 7.5, 15, 1, 0, 15, -1, 0, 12.9904, -1, 7.5, 15, 1, 0, 12.9904, 1, -7.5, 15, -1, 0, 12.9904, 1, -7.5, 12.9904, -1, -7.5, 15, -1, 0, 12.9904, 1, -7.5, 7.5, 1, -12.9904, 12.9904, -1, -7.5, 7.5, 1, -12.9904, 7.5, -1, -12.9904, 12.9904, -1, -7.5, 7.5, 1, -12.9904, 0, 1, -15, 7.5, -1, -12.9904, 0, 1, -15, 0, -1, -15, 7.5, -1, -12.9904, 0, 1, -15, -7.5, 1, -12.9904, 0, -1, -15, -7.5, 1, -12.9904, -7.5, -1, -12.9904, 0, -1, -15, -7.5, 1, -12.9904, -12.9904, 1, -7.5, -7.5, -1, -12.9904, -12.9904, 1, -7.5, -12.9904, -1, -7.5, -7.5, -1, -12.9904, -12.9904, 1, -7.5, -15, 1, 0, -12.9904, -1, -7.5, -15, 1, 0, -15, -1, 0, -12.9904, -1, -7.5, -15, 1, 0, -12.9904, 1, 7.5, -15, -1, 0, -12.9904, 1, 7.5, -12.9904, -1, 7.5, -15, -1, 0, -12.9904, 1, 7.5, -7.5, 1, 12.9904, -12.9904, -1, 7.5, -7.5, 1, 12.9904, -7.5, -1, 12.9904, -12.9904, -1, 7.5, -7.5, 1, 12.9904, 0, 1, 15, -7.5, -1, 12.9904, 0, 1, 15, 0, -1, 15, -7.5, -1, 12.9904, 0, -1, 15, 7.5, -1, 12.9904, 0, -3, 15, 7.5, -1, 12.9904, 7.5, -3, 12.9904, 0, -3, 15, 7.5, -1, 12.9904, 12.9904, -1, 7.5, 7.5, -3, 12.9904, 12.9904, -1, 7.5, 12.9904, -3, 7.5, 7.5, -3, 12.9904, 12.9904, -1, 7.5, 15, -1, 0, 12.9904, -3, 7.5, 15, -1, 0, 15, -3, 0, 12.9904, -3, 7.5, 15, -1, 0, 12.9904, -1, -7.5, 15, -3, 0, 12.9904, -1, -7.5, 12.9904, -3, -7.5, 15, -3, 0, 12.9904, -1, -7.5, 7.5, -1, -12.9904, 12.9904, -3, -7.5, 7.5, -1, -12.9904, 7.5, -3, -12.9904, 12.9904, -3, -7.5, 7.5, -1, -12.9904, 0, -1, -15, 7.5, -3, -12.9904, 0, -1, -15, 0, -3, -15, 7.5, -3, -12.9904, 0, -1, -15, -7.5, -1, -12.9904, 0, -3, -15, -7.5, -1, -12.9904, -7.5, -3, -12.9904, 0, -3, -15, -7.5, -1, -12.9904, -12.9904, -1, -7.5, -7.5, -3, -12.9904, -12.9904, -1, -7.5, -12.9904, -3, -7.5, -7.5, -3, -12.9904, -12.9904, -1, -7.5, -15, -1, 0, -12.9904, -3, -7.5, -15, -1, 0, -15, -3, 0, -12.9904, -3, -7.5, -15, -1, 0, -12.9904, -1, 7.5, -15, -3, 0, -12.9904, -1, 7.5, -12.9904, -3, 7.5, -15, -3, 0, -12.9904, -1, 7.5, -7.5, -1, 12.9904, -12.9904, -3, 7.5, -7.5, -1, 12.9904, -7.5, -3, 12.9904, -12.9904, -3, 7.5, -7.5, -1, 12.9904, 0, -1, 15, -7.5, -3, 12.9904, 0, -1, 15, 0, -3, 15, -7.5, -3, 12.9904, 0, -3, 15, 7.5, -3, 12.9904, 0, -5, 15, 7.5, -3, 12.9904, 7.5, -5, 12.9904, 0, -5, 15, 7.5, -3, 12.9904, 12.9904, -3, 7.5, 7.5, -5, 12.9904, 12.9904, -3, 7.5, 12.9904, -5, 7.5, 7.5, -5, 12.9904, 12.9904, -3, 7.5, 15, -3, 0, 12.9904, -5, 7.5, 15, -3, 0, 15, -5, 0, 12.9904, -5, 7.5, 15, -3, 0, 12.9904, -3, -7.5, 15, -5, 0, 12.9904, -3, -7.5, 12.9904, -5, -7.5, 15, -5, 0, 12.9904, -3, -7.5, 7.5, -3, -12.9904, 12.9904, -5, -7.5, 7.5, -3, -12.9904, 7.5, -5, -12.9904, 12.9904, -5, -7.5, 7.5, -3, -12.9904, 0, -3, -15, 7.5, -5, -12.9904, 0, -3, -15, 0, -5, -15, 7.5, -5, -12.9904, 0, -3, -15, -7.5, -3, -12.9904, 0, -5, -15, -7.5, -3, -12.9904, -7.5, -5, -12.9904, 0, -5, -15, -7.5, -3, -12.9904, -12.9904, -3, -7.5, -7.5, -5, -12.9904, -12.9904, -3, -7.5, -12.9904, -5, -7.5, -7.5, -5, -12.9904, -12.9904, -3, -7.5, -15, -3, 0, -12.9904, -5, -7.5, -15, -3, 0, -15, -5, 0, -12.9904, -5, -7.5, -15, -3, 0, -12.9904, -3, 7.5, -15, -5, 0, -12.9904, -3, 7.5, -12.9904, -5, 7.5, -15, -5, 0, -12.9904, -3, 7.5, -7.5, -3, 12.9904, -12.9904, -5, 7.5, -7.5, -3, 12.9904, -7.5, -5, 12.9904, -12.9904, -5, 7.5, -7.5, -3, 12.9904, 0, -3, 15, -7.5, -5, 12.9904, 0, -3, 15, 0, -5, 15, -7.5, -5, 12.9904, 0, 5, 0, 7.5, 5, 12.9904, 0, 5, 15, 0, 5, 0, 12.9904, 5, 7.5, 7.5, 5, 12.9904, 0, 5, 0, 15, 5, 0, 12.9904, 5, 7.5, 0, 5, 0, 12.9904, 5, -7.5, 15, 5, 0, 0, 5, 0, 7.5, 5, -12.9904, 12.9904, 5, -7.5, 0, 5, 0, 0, 5, -15, 7.5, 5, -12.9904, 0, 5, 0, -7.5, 5, -12.9904, 0, 5, -15, 0, 5, 0, -12.9904, 5, -7.5, -7.5, 5, -12.9904, 0, 5, 0, -15, 5, 0, -12.9904, 5, -7.5, 0, 5, 0, -12.9904, 5, 7.5, -15, 5, 0, 0, 5, 0, -7.5, 5, 12.9904, -12.9904, 5, 7.5, 0, 5, 0, 0, 5, 15, -7.5, 5, 12.9904, 0, -5, 0, 0, -5, 15, 7.5, -5, 12.9904, 0, -5, 0, 7.5, -5, 12.9904, 12.9904, -5, 7.5, 0, -5, 0, 12.9904, -5, 7.5, 15, -5, 0, 0, -5, 0, 15, -5, 0, 12.9904, -5, -7.5, 0, -5, 0, 12.9904, -5, -7.5, 7.5, -5, -12.9904, 0, -5, 0, 7.5, -5, -12.9904, 0, -5, -15, 0, -5, 0, 0, -5, -15, -7.5, -5, -12.9904, 0, -5, 0, -7.5, -5, -12.9904, -12.9904, -5, -7.5, 0, -5, 0, -12.9904, -5, -7.5, -15, -5, 0, 0, -5, 0, -15, -5, 0, -12.9904, -5, 7.5, 0, -5, 0, -12.9904, -5, 7.5, -7.5, -5, 12.9904, 0, -5, 0, -7.5, -5, 12.9904, 0, -5, 15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ogpln"]
+size = Vector3(1, 3.94629, 12.6738)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00cvb"]
+diffuse_mode = 3
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_62uwl"]
+material = SubResource("StandardMaterial3D_00cvb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nb18v"]
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+shadow_to_opacity = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_o8rp8"]
+material = SubResource("StandardMaterial3D_nb18v")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2ecbp"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="Animation" id="Animation_mjx3c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(14.6077, 1.39233, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BellRinger2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(14.6077, 1.39233, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BellRinger3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(14.608, 1.392, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_05xi4"]
+resource_name = "hideAllButtons"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(14.6077, 1.39233, 2), Vector3(13.6077, 1.39233, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BellRinger2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(14.6077, 1.39233, 0), Vector3(13.6077, 1.39233, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BellRinger3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(14.608, 1.392, -2), Vector3(13.608, 1.392, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_xwoic"]
+resource_name = "push_normal"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(14.6077, 1.39233, 2), Vector3(14.3, 1.392, 2), Vector3(14.3, 1.392, 2), Vector3(14.6077, 1.39233, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v04of"]
+_data = {
+"RESET": SubResource("Animation_mjx3c"),
+"hideAllButtons": SubResource("Animation_05xi4"),
+"push_normal": SubResource("Animation_xwoic")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e6f7k"]
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 1)
+shadow_to_opacity = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_3lysf"]
+material = SubResource("StandardMaterial3D_e6f7k")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gbbme"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="Animation" id="Animation_hixax"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BellRinger2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(14.6077, 1.39233, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_foeby"]
+resource_name = "push_high"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BellRinger2:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(14.608, 1.392, 0), Vector3(14.3, 1.392, 0), Vector3(14.3, 1.392, 0), Vector3(14.608, 1.392, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ipwfa"]
+_data = {
+"RESET": SubResource("Animation_hixax"),
+"push_high": SubResource("Animation_foeby")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05nl8"]
+shading_mode = 0
+albedo_color = Color(0, 0, 1, 1)
+shadow_to_opacity = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ycleg"]
+material = SubResource("StandardMaterial3D_05nl8")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xtryt"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="Animation" id="Animation_e8g2s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BellRinger3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(14.6077, 1.39233, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_lrwqo"]
+resource_name = "push_low"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BellRinger3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(14.608, 1.392, -2), Vector3(14.3, 1.392, -2), Vector3(14.3, 1.392, -2), Vector3(14.608, 1.392, -2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eq7lc"]
+_data = {
+"RESET": SubResource("Animation_e8g2s"),
+"push_low": SubResource("Animation_lrwqo")
+}
+
+[sub_resource type="Animation" id="Animation_2fd6y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("JumpInfo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:fog_depth_begin")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorldEnvironment:environment:fog_depth_end")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WorldEnvironment:environment:fog_sky_affect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Puzzle/BellRingers:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WorldEnvironment/DirectionalLight3D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Puzzle/BellRingers:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WorldEnvironment:environment:fog_light_color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_msepf"]
+resource_name = "blackFogFadeIn"
+length = 5.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:fog_depth_begin")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:fog_depth_end")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [500.0, 1.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorldEnvironment:environment:fog_sky_affect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WorldEnvironment/DirectionalLight3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.25147, 1.11701, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WorldEnvironment:environment:fog_light_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_niexi"]
+resource_name = "fadeInJumpText"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("JumpInfo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.06667, 10.0667, 14, 19.4667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lqowe"]
+resource_name = "fogFadeOut"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:fog_depth_begin")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:fog_depth_end")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 500.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorldEnvironment:environment:fog_sky_affect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dtpvk"]
+resource_name = "fogFadeOutExit"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:fog_depth_begin")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:fog_depth_end")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 500.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorldEnvironment:environment:fog_sky_affect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WorldEnvironment/DirectionalLight3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.25147, 1.11701, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Puzzle/BellRingers:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_n5oju"]
+resource_name = "noFog"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:fog_sky_affect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:fog_depth_begin")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [500.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorldEnvironment:environment:fog_depth_end")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [500.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5dsrj"]
+_data = {
+"RESET": SubResource("Animation_2fd6y"),
+"blackFogFadeIn": SubResource("Animation_msepf"),
+"fadeInJumpText": SubResource("Animation_niexi"),
+"fogFadeOut": SubResource("Animation_lqowe"),
+"fogFadeOutExit": SubResource("Animation_dtpvk"),
+"noFog": SubResource("Animation_n5oju")
+}
+
+[node name="road_room" type="Node3D"]
+script = ExtResource("1_r0rno")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k4asj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, -3.61999e-06, 1, 0, -1, -3.61999e-06, 0, 38.8691, 0)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="Floor" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="GrassFloor" parent="Floor" instance=ExtResource("1_japhr")]
+
+[node name="GrassFloor2" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="GrassFloor3" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+
+[node name="GrassFloor4" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+
+[node name="GrassFloor5" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+
+[node name="GrassFloor6" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+
+[node name="GrassFloor7" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+
+[node name="GrassFloor8" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 20)
+
+[node name="GrassFloor9" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 20)
+
+[node name="GrassFloor10" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
+
+[node name="GrassFloor11" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 30)
+
+[node name="GrassFloor12" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 30)
+
+[node name="GrassFloor13" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40)
+
+[node name="GrassFloor14" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -40)
+
+[node name="GrassFloor15" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -40)
+
+[node name="GrassFloor16" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30)
+
+[node name="GrassFloor17" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -30)
+
+[node name="GrassFloor18" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -30)
+
+[node name="GrassFloor19" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="GrassFloor20" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -20)
+
+[node name="GrassFloor21" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -20)
+
+[node name="GrassFloor22" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="GrassFloor23" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+
+[node name="GrassFloor25" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[node name="GrassFloor26" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 10)
+
+[node name="GrassFloor27" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20)
+
+[node name="GrassFloor28" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 30)
+
+[node name="GrassFloor29" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -40)
+
+[node name="GrassFloor30" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -30)
+
+[node name="GrassFloor31" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
+
+[node name="GrassFloor32" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -10)
+
+[node name="GrassFloor24" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+
+[node name="GrassFloor33" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
+
+[node name="GrassFloor34" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 10)
+
+[node name="GrassFloor35" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 20)
+
+[node name="GrassFloor36" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 30)
+
+[node name="GrassFloor37" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -40)
+
+[node name="GrassFloor38" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -30)
+
+[node name="GrassFloor39" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
+
+[node name="GrassFloor40" parent="Floor" instance=ExtResource("1_japhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -10)
+
+[node name="Grass" type="Node3D" parent="Floor"]
+transform = Transform3D(0.51, 0, 0, 0, 0.42, 0, 0, 0, 2.85, 0, -1.41399, 0)
+
+[node name="Grass3" parent="Floor/Grass" instance=ExtResource("13_4cbm4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -15.4807, 0.616319, 12.7342)
+
+[node name="Grass4" parent="Floor/Grass" instance=ExtResource("13_4cbm4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -11.0226, 0.616319, 12.8714)
+
+[node name="Grass5" parent="Floor/Grass" instance=ExtResource("13_4cbm4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -8.07346, 0.616319, 16.9522)
+
+[node name="Grass6" parent="Floor/Grass" instance=ExtResource("13_4cbm4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -2.79235, 0.616319, 21.959)
+
+[node name="Grass7" parent="Floor/Grass" instance=ExtResource("13_4cbm4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.48876, 0.616319, 16.8151)
+
+[node name="Grass8" parent="Floor/Grass" instance=ExtResource("13_4cbm4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 8.73007, 0.616319, 17.9124)
+
+[node name="Grass9" parent="Floor/Grass" instance=ExtResource("13_4cbm4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 14.5942, 0.616319, 13.3172)
+
+[node name="Grass10" parent="Floor/Grass" instance=ExtResource("13_4cbm4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 15.1428, 0.616319, 8.03607)
+
+[node name="Grass12" parent="Floor/Grass" instance=ExtResource("13_4cbm4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 23.0302, 0.616319, -2.52615)
+
+[node name="Grass14" parent="Floor/Grass" instance=ExtResource("13_4cbm4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12.5366, 0.616319, -10.1735)
+
+[node name="Grass15" parent="Floor/Grass" instance=ExtResource("13_4cbm4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 13.634, 0.616319, -17.5122)
+
+[node name="Grass16" parent="Floor/Grass" instance=ExtResource("13_4cbm4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 5.09503, 0.616319, -18.3695)
+
+[node name="Grass17" parent="Floor/Grass" instance=ExtResource("13_4cbm4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -2.58659, 0.616319, -20.0498)
+
+[node name="Grass18" parent="Floor/Grass" instance=ExtResource("13_4cbm4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -8.96508, 0.616319, -14.7001)
+
+[node name="Grass19" parent="Floor/Grass" instance=ExtResource("13_4cbm4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -16.3381, 0.616319, -10.825)
+
+[node name="Grass21" parent="Floor/Grass" instance=ExtResource("13_4cbm4")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -22.3393, 0.616319, -1.77171)
+
+[node name="Grass22" parent="Floor/Grass" instance=ExtResource("13_4cbm4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9805, 0, 0.857323)
+
+[node name="Walls" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="castle_open" parent="Walls" instance=ExtResource("5_gx164")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 0)
+visible = false
+
+[node name="NextLevelTransition" type="Area3D" parent="Walls/castle_open"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98812, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/castle_open/NextLevelTransition"]
+shape = SubResource("BoxShape3D_wlulq")
+
+[node name="CenterWall" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0, 5, 0)
+material_override = ExtResource("4_ofbm4")
+mesh = SubResource("CylinderMesh_2ky5a")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/CenterWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/CenterWall/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_epmb0")
+
+[node name="OuterWall" type="Node3D" parent="Walls"]
+
+[node name="wall" parent="Walls/OuterWall" instance=ExtResource("5_a2jeg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 25)
+
+[node name="wall2" parent="Walls/OuterWall" instance=ExtResource("5_a2jeg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.37114e-07, 0, -25)
+
+[node name="wall3" parent="Walls/OuterWall" instance=ExtResource("5_a2jeg")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -25, 0, -8.74228e-07)
+
+[node name="wall4" parent="Walls/OuterWall" instance=ExtResource("5_a2jeg")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 25, 0, 8.74228e-07)
+
+[node name="wall5" parent="Walls/OuterWall" instance=ExtResource("5_a2jeg")]
+transform = Transform3D(-0.5, 0, -1.85867, 0, 1, 0, 0.866025, 0, -1.0731, -12, 0, 20.7846)
+
+[node name="wall6" parent="Walls/OuterWall" instance=ExtResource("5_a2jeg")]
+transform = Transform3D(-0.5, 0, -1.98514, 0, 1, 0, 0.866025, 0, -1.14612, 12, 0, -20.7846)
+
+[node name="wall7" parent="Walls/OuterWall" instance=ExtResource("5_a2jeg")]
+transform = Transform3D(-0.866025, 0, 1.02893, 0, 1, 0, -0.5, 0, -1.78216, -20.7846, 0, -12)
+
+[node name="wall8" parent="Walls/OuterWall" instance=ExtResource("5_a2jeg")]
+transform = Transform3D(-0.866025, 0, 1.15048, 0, 1, 0, -0.5, 0, -1.99269, 20.7846, 0, 12)
+
+[node name="wall9" parent="Walls/OuterWall" instance=ExtResource("5_a2jeg")]
+transform = Transform3D(-0.866025, 0, -1.17525, 0, 1, 0, 0.5, 0, -2.03559, -20.7846, 0, 12)
+
+[node name="wall10" parent="Walls/OuterWall" instance=ExtResource("5_a2jeg")]
+transform = Transform3D(-0.866025, 0, -1.06414, 0, 1, 0, 0.5, 0, -1.84314, 20.7846, 0, -12)
+
+[node name="wall11" parent="Walls/OuterWall" instance=ExtResource("5_a2jeg")]
+transform = Transform3D(-0.5, 0, 1.8073, 0, 1, 0, -0.866026, 0, -1.04344, -12, 0, -20.7846)
+
+[node name="wall12" parent="Walls/OuterWall" instance=ExtResource("5_a2jeg")]
+transform = Transform3D(-0.5, 0, 1.88253, 0, 1, 0, -0.866026, 0, -1.08688, 12, 0, 20.7846)
+
+[node name="OuterWallShaded" type="Node3D" parent="Walls"]
+visible = false
+
+[node name="brick_wall_shaded" parent="Walls/OuterWallShaded" instance=ExtResource("8_x3nuk")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 25)
+
+[node name="brick_wall_shaded2" parent="Walls/OuterWallShaded" instance=ExtResource("8_x3nuk")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.37114e-07, 0, -25)
+
+[node name="brick_wall_shaded3" parent="Walls/OuterWallShaded" instance=ExtResource("8_x3nuk")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -25, 0, -8.74228e-07)
+
+[node name="brick_wall_shaded4" parent="Walls/OuterWallShaded" instance=ExtResource("8_x3nuk")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 25, 0, 8.74228e-07)
+
+[node name="brick_wall_shaded5" parent="Walls/OuterWallShaded" instance=ExtResource("8_x3nuk")]
+transform = Transform3D(-0.5, 0, -1.85867, 0, 1, 0, 0.866025, 0, -1.0731, -12, 0, 20.7846)
+
+[node name="brick_wall_shaded6" parent="Walls/OuterWallShaded" instance=ExtResource("8_x3nuk")]
+transform = Transform3D(-0.5, 0, -1.98514, 0, 1, 0, 0.866025, 0, -1.14612, 12, 0, -20.7846)
+
+[node name="brick_wall_shaded7" parent="Walls/OuterWallShaded" instance=ExtResource("8_x3nuk")]
+transform = Transform3D(-0.866025, 0, 1.02893, 0, 1, 0, -0.5, 0, -1.78216, -20.7846, 0, -12)
+
+[node name="brick_wall_shaded8" parent="Walls/OuterWallShaded" instance=ExtResource("8_x3nuk")]
+transform = Transform3D(-0.866025, 0, 1.15048, 0, 1, 0, -0.5, 0, -1.99269, 20.7846, 0, 12)
+
+[node name="brick_wall_shaded9" parent="Walls/OuterWallShaded" instance=ExtResource("8_x3nuk")]
+transform = Transform3D(-0.866025, 0, -1.17525, 0, 1, 0, 0.5, 0, -2.03559, -20.7846, 0, 12)
+
+[node name="brick_wall_shaded10" parent="Walls/OuterWallShaded" instance=ExtResource("8_x3nuk")]
+transform = Transform3D(-0.866025, 0, -1.06414, 0, 1, 0, 0.5, 0, -1.84314, 20.7846, 0, -12)
+
+[node name="brick_wall_shaded11" parent="Walls/OuterWallShaded" instance=ExtResource("8_x3nuk")]
+transform = Transform3D(-0.5, 0, 1.8073, 0, 1, 0, -0.866026, 0, -1.04344, -12, 0, -20.7846)
+
+[node name="brick_wall_shaded12" parent="Walls/OuterWallShaded" instance=ExtResource("8_x3nuk")]
+transform = Transform3D(-0.5, 0, 1.88253, 0, 1, 0, -0.866026, 0, -1.08688, 12, 0, 20.7846)
+
+[node name="openCastleTimer" type="Timer" parent="Walls"]
+wait_time = 13.0
+one_shot = true
+
+[node name="TriggerLabel" type="Label" parent="."]
+offset_top = 100.0
+offset_right = 40.0
+offset_bottom = 123.0
+script = ExtResource("6_ht72e")
+
+[node name="AudioManager" type="Node" parent="."]
+
+[node name="WindAmbience" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("8_qbgt1")
+autoplay = true
+parameters/looping = true
+
+[node name="BellSound" type="AudioStreamPlayer3D" parent="AudioManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.40658, 0)
+stream = ExtResource("8_jhvf5")
+pitch_scale = 1.5
+max_distance = 40.0
+panning_strength = 2.0
+
+[node name="BellSound2" type="AudioStreamPlayer3D" parent="AudioManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.40658, 32)
+stream = ExtResource("8_jhvf5")
+pitch_scale = 0.7
+max_distance = 40.0
+panning_strength = 2.0
+
+[node name="BellSound3" type="AudioStreamPlayer3D" parent="AudioManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.40658, 0)
+stream = ExtResource("8_jhvf5")
+max_distance = 40.0
+panning_strength = 2.0
+
+[node name="BellSound4" type="AudioStreamPlayer3D" parent="AudioManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.40658, 10)
+stream = ExtResource("8_jhvf5")
+pitch_scale = 0.7
+max_distance = 40.0
+panning_strength = 2.0
+
+[node name="BellChorus" type="AudioStreamPlayer3D" parent="AudioManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.9407, 0)
+stream = ExtResource("9_wu4v3")
+volume_db = 10.543
+
+[node name="Melody" type="AudioStreamPlayer3D" parent="AudioManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.40915, -34.0857)
+stream = ExtResource("10_rasvf")
+doppler_tracking = 2
+
+[node name="Player" parent="." instance=ExtResource("2_whnt6")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.357528, 2.28733e-06, 18.5681)
+mouse_sensitivity_h = 1.0
+mouse_sensitivity_v = 1.0
+canUseLight = false
+
+[node name="AnimationPlayer" parent="Player/MainUI" index="6"]
+autoplay = "RESET"
+
+[node name="Puzzle" type="Node3D" parent="."]
+
+[node name="Trigger1" type="Area3D" parent="Puzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19)
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Trigger1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47314, 0)
+shape = SubResource("BoxShape3D_ogpln")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Puzzle/Trigger1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.901837, 0)
+visible = false
+mesh = SubResource("CylinderMesh_62uwl")
+
+[node name="Trigger2" type="Area3D" parent="Puzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
+visible = false
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Trigger2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47314, 0)
+shape = SubResource("BoxShape3D_ogpln")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Puzzle/Trigger2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.901837, 0)
+visible = false
+mesh = SubResource("CylinderMesh_62uwl")
+
+[node name="Trigger3" type="Area3D" parent="Puzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19)
+visible = false
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Trigger3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47314, 0)
+shape = SubResource("BoxShape3D_ogpln")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Puzzle/Trigger3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.901837, 0)
+visible = false
+mesh = SubResource("CylinderMesh_62uwl")
+
+[node name="Trigger4" type="Area3D" parent="Puzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
+visible = false
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/Trigger4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47314, 0)
+shape = SubResource("BoxShape3D_ogpln")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Puzzle/Trigger4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.901837, 0)
+visible = false
+mesh = SubResource("CylinderMesh_62uwl")
+
+[node name="BellRingers" type="Node3D" parent="Puzzle"]
+script = ExtResource("10_fb502")
+
+[node name="BellRinger1" type="MeshInstance3D" parent="Puzzle/BellRingers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6077, 1.39233, 2)
+mesh = SubResource("BoxMesh_o8rp8")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/BellRingers/BellRinger1" groups=["bellRingerOne", "objects"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/BellRingers/BellRinger1/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2ecbp")
+
+[node name="BellSound" type="AudioStreamPlayer3D" parent="Puzzle/BellRingers/BellRinger1"]
+stream = ExtResource("8_jhvf5")
+max_distance = 40.0
+max_polyphony = 3
+panning_strength = 2.0
+
+[node name="bell_push_normal" type="AnimationPlayer" parent="Puzzle/BellRingers/BellRinger1"]
+libraries = {
+"": SubResource("AnimationLibrary_v04of")
+}
+
+[node name="BellRinger2" type="MeshInstance3D" parent="Puzzle/BellRingers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6077, 1.39233, 0)
+mesh = SubResource("BoxMesh_3lysf")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/BellRingers/BellRinger2" groups=["bellRingerTwo", "objects"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/BellRingers/BellRinger2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_gbbme")
+
+[node name="BellSound2" type="AudioStreamPlayer3D" parent="Puzzle/BellRingers/BellRinger2"]
+stream = ExtResource("8_jhvf5")
+pitch_scale = 1.5
+max_distance = 40.0
+max_polyphony = 3
+panning_strength = 2.0
+
+[node name="bell_push_high" type="AnimationPlayer" parent="Puzzle/BellRingers/BellRinger2"]
+root_node = NodePath("../../BellRinger1")
+libraries = {
+"": SubResource("AnimationLibrary_ipwfa")
+}
+
+[node name="BellRinger3" type="MeshInstance3D" parent="Puzzle/BellRingers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6077, 1.39233, -2)
+mesh = SubResource("BoxMesh_ycleg")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Puzzle/BellRingers/BellRinger3" groups=["bellRingerThree", "objects"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzle/BellRingers/BellRinger3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_xtryt")
+
+[node name="BellSound3" type="AudioStreamPlayer3D" parent="Puzzle/BellRingers/BellRinger3"]
+stream = ExtResource("8_jhvf5")
+pitch_scale = 0.7
+max_distance = 40.0
+max_polyphony = 3
+panning_strength = 2.0
+
+[node name="bell_push_low" type="AnimationPlayer" parent="Puzzle/BellRingers/BellRinger3"]
+root_node = NodePath("../../BellRinger1")
+libraries = {
+"": SubResource("AnimationLibrary_eq7lc")
+}
+
+[node name="WrongSequence" type="AudioStreamPlayer3D" parent="Puzzle/BellRingers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6077, 1.39233, 2)
+stream = ExtResource("8_jhvf5")
+pitch_scale = 0.24
+max_distance = 40.0
+max_polyphony = 3
+panning_strength = 2.0
+
+[node name="JumpInfo" type="Label" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 93.0
+offset_top = 174.0
+offset_right = 248.0
+offset_bottom = 197.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("10_an0cb")
+text = "Press space to jump"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5dsrj")
+}
+autoplay = "RESET"
+
+[node name="fogFadeOut" type="Timer" parent="AnimationPlayer"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="exitRoomTimer" type="Timer" parent="AnimationPlayer"]
+wait_time = 5.0
+
+[connection signal="body_entered" from="Walls/castle_open/NextLevelTransition" to="." method="exit"]
+[connection signal="timeout" from="Walls/openCastleTimer" to="." method="openCastle" flags=6]
+[connection signal="interactedWithObject" from="Player" to="Puzzle/BellRingers" method="ringBell"]
+[connection signal="startGame" from="Player/MainUI" to="." method="startGame"]
+[connection signal="startGame" from="Player/MainUI" to="Player" method="startGame"]
+[connection signal="body_exited" from="Puzzle/Trigger1" to="." method="triggerOne"]
+[connection signal="body_exited" from="Puzzle/Trigger2" to="." method="triggerTwo"]
+[connection signal="body_exited" from="Puzzle/Trigger3" to="." method="triggerThree"]
+[connection signal="body_exited" from="Puzzle/Trigger4" to="." method="triggerFour"]
+[connection signal="correctSequenceInput" from="Puzzle/BellRingers" to="." method="puzzleComplete" flags=6]
+[connection signal="timeout" from="AnimationPlayer/fogFadeOut" to="." method="startMap"]
+[connection signal="timeout" from="AnimationPlayer/exitRoomTimer" to="." method="changeScene"]
+
+[editable path="Player"]
+[editable path="Player/MainUI"]

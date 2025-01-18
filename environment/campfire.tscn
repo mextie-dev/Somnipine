@@ -1,0 +1,100 @@
+[gd_scene load_steps=11 format=3 uid="uid://dd7gdi3cr2tu8"]
+
+[ext_resource type="Material" uid="uid://7vnh18i2raxb" path="res://environment/assets/materials/wood.tres" id="1_gyfjy"]
+[ext_resource type="Texture2D" uid="uid://dj2q1kovnb1lo" path="res://environment/assets/textures/fire.png" id="2_5cudk"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ikjv4"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 1.0
+radial_segments = 5
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_32j8i"]
+direction = Vector3(0, 1, 0)
+spread = 8.722
+initial_velocity_min = 0.2
+initial_velocity_max = 0.2
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w0ywu"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("2_5cudk")
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_a6a0o"]
+material = SubResource("StandardMaterial3D_w0ywu")
+size = Vector2(2, 2)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_upxa8"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+initial_velocity_max = 0.2
+gravity = Vector3(0, 1, 0)
+color = Color(0.541176, 0.541176, 0.541176, 0.533333)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ydvmv"]
+transparency = 1
+vertex_color_use_as_albedo = true
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="SphereMesh" id="SphereMesh_itybl"]
+material = SubResource("StandardMaterial3D_ydvmv")
+radius = 0.28
+height = 0.58
+radial_segments = 4
+rings = 6
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_oefo8"]
+height = 3.33972
+radius = 0.627344
+
+[node name="Campfire" type="Node3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Logs" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Logs"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 0, 0)
+material_override = ExtResource("1_gyfjy")
+mesh = SubResource("CylinderMesh_ikjv4")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Logs"]
+transform = Transform3D(-0.258819, 0.933013, -0.25, 0, 0.258819, 0.965926, 0.965926, 0.25, -0.0669873, 0, 0, 0)
+material_override = ExtResource("1_gyfjy")
+mesh = SubResource("CylinderMesh_ikjv4")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Logs"]
+transform = Transform3D(-0.578669, -0.787773, 0.211083, 3.8567e-09, 0.258819, 0.965926, -0.815562, 0.558952, -0.149771, 0, 0, 0)
+material_override = ExtResource("1_gyfjy")
+mesh = SubResource("CylinderMesh_ikjv4")
+skeleton = NodePath("../..")
+
+[node name="Fire" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.237457, 0)
+amount = 2
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_32j8i")
+draw_pass_1 = SubResource("QuadMesh_a6a0o")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fire"]
+light_color = Color(1, 0.709804, 0.176471, 1)
+light_energy = 7.0
+omni_range = 30.0
+
+[node name="Smoke" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793553, 0)
+amount = 5
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_upxa8")
+draw_pass_1 = SubResource("SphereMesh_itybl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("CylinderShape3D_oefo8")

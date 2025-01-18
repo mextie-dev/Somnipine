@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://clku4kdnghpie"]
+
+[ext_resource type="PackedScene" uid="uid://peoppa80nm42" path="res://environment/assets/raw_models/Lamp_Modern_FBX.FBX" id="1_xg5lm"]
+[ext_resource type="Texture2D" uid="uid://cmbg4el0yxsvk" path="res://environment/assets/hd/Lamp/Lamp Modern Diffuse.png" id="2_qdnm5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_whl30"]
+cull_mode = 2
+albedo_texture = ExtResource("2_qdnm5")
+
+[node name="Lamp" instance=ExtResource("1_xg5lm")]
+
+[node name="Lamp Modern" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_whl30")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.644961, 0)
+omni_range = 20.518

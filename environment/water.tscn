@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqk2bgag3no"]
+
+[ext_resource type="Material" uid="uid://b0uaytc0gvp7r" path="res://environment/assets/materials/water_shaded.tres" id="1_75y5w"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_db162"]
+size = Vector2(10, 10)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c77o3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_61lpn"]
+albedo_texture = SubResource("CanvasTexture_c77o3")
+
+[node name="Water" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+material_override = ExtResource("1_75y5w")
+mesh = SubResource("QuadMesh_db162")
+surface_material_override/0 = SubResource("StandardMaterial3D_61lpn")

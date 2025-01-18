@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqv4i1ktn6yo7"]
+
+[ext_resource type="PackedScene" uid="uid://psl3dygpm5co" path="res://environment/assets/raw_models/book_brown_02.glb" id="1_oyqug"]
+[ext_resource type="Material" uid="uid://3v8uejl6b1rs" path="res://environment/assets/materials/brown_book.tres" id="2_qi6dr"]
+
+[node name="book_brown" instance=ExtResource("1_oyqug")]
+
+[node name="Book_Brown_2" parent="." index="0"]
+material_override = ExtResource("2_qi6dr")

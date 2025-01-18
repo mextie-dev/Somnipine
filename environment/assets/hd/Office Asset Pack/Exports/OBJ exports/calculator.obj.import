@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c60gael1iprun"
+path="res://.godot/imported/calculator.obj-ca6d9e8074a70da3c596b0c6bef6aa65.mesh"
+
+[deps]
+
+files=["res://.godot/imported/calculator.obj-ca6d9e8074a70da3c596b0c6bef6aa65.mesh"]
+
+source_file="res://environment/assets/hd/Office Asset Pack/Exports/OBJ exports/calculator.obj"
+dest_files=["res://.godot/imported/calculator.obj-ca6d9e8074a70da3c596b0c6bef6aa65.mesh", "res://.godot/imported/calculator.obj-ca6d9e8074a70da3c596b0c6bef6aa65.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

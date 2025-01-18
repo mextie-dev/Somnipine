@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ckd0mm7334665"
+path="res://.godot/imported/Lamp_Modern_OBJ.obj-18ad1e7496062e544428b87829e9c8ed.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Lamp_Modern_OBJ.obj-18ad1e7496062e544428b87829e9c8ed.mesh"]
+
+source_file="res://environment/assets/raw_models/Lamp_Modern_OBJ.obj"
+dest_files=["res://.godot/imported/Lamp_Modern_OBJ.obj-18ad1e7496062e544428b87829e9c8ed.mesh", "res://.godot/imported/Lamp_Modern_OBJ.obj-18ad1e7496062e544428b87829e9c8ed.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

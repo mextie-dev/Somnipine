@@ -1,0 +1,26 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://dblvkj21qao4f"
+path="res://.godot/imported/ending_room.exr-f75474d27cd49fa477ff0321979b4bd2.ctexarray"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://environment/maps/ending_room.exr"
+dest_files=["res://.godot/imported/ending_room.exr-f75474d27cd49fa477ff0321979b4bd2.ctexarray"]
+
+[params]
+
+compress/mode=3
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=3

@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://8pqa15i6ccnb"]
+
+[ext_resource type="PackedScene" uid="uid://cw58wa2idgeni" path="res://environment/assets/raw_models/bookshelf.glb" id="1_1cfo5"]
+[ext_resource type="Material" uid="uid://7vnh18i2raxb" path="res://environment/assets/materials/wood.tres" id="2_t8dis"]
+[ext_resource type="Material" uid="uid://dhgr2wmagkmmu" path="res://environment/assets/materials/books.tres" id="3_j0ulu"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ujs7j"]
+data = PackedVector3Array(-2.5, 0, 2.5, -2.5, 2.5, -2.5, -2.5, 2.5, 2.5, -2.5, 0, 2.5, -2.5, 0, -2.5, -2.5, 2.5, -2.5, -2.5, 0, -2.5, 2.5, 2.5, -2.5, -2.5, 2.5, -2.5, -2.5, 0, -2.5, 2.5, 0, -2.5, 2.5, 2.5, -2.5, 2.5, 0, 2.5, -2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 0, 2.5, -2.5, 0, 2.5, -2.5, 2.5, 2.5, -2.5, -2.5, -2.5, 2.5, -2.5, 2.5, 2.5, -2.5, -2.5, -2.5, -2.5, -2.5, -2.5, -2.5, 2.5, 2.5, -2.5, 2.5, 2.5, 2.5, -2.5, -2.5, 2.5, 2.5, -2.5, 2.5, -2.5, 2.5, 2.5, -2.5, 2.5, 2.5, 2.5, -2.5, 2.5, 2.5, 2.5, -2.5, 2.5, -2.5, 0, 2.5, 2.5, 0, 2.5, 2.5, -2.5, 2.5, -2.5, -2.5, 2.5, -2.5, 0, 2.5, -2.5, -2.5, -2.5, 2.5, 0, -2.5, -2.5, 0, -2.5, -2.5, -2.5, -2.5, 2.5, -2.5, -2.5, 2.5, 0, -2.5, -2.5, -2.5, 2.5, -2.5, 0, -2.5, -2.5, 0, 2.5, -2.5, -2.5, 2.5, -2.5, -2.5, -2.5, -2.5, 0, -2.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lci68"]
+data = PackedVector3Array(2.5, 0, -2.5, 2.5, 2.5, 2.5, 2.5, 2.5, -2.5, 2.5, 0, -2.5, 2.5, 0, 2.5, 2.5, 2.5, 2.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_oacqy"]
+data = PackedVector3Array(2.5, -2.5, -2.5, 2.5, 0, 2.5, 2.5, 0, -2.5, 2.5, -2.5, -2.5, 2.5, -2.5, 2.5, 2.5, 0, 2.5)
+
+[node name="bookshelf" instance=ExtResource("1_1cfo5")]
+
+[node name="shelf" parent="." index="0"]
+material_override = ExtResource("2_t8dis")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="shelf" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shelf/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_ujs7j")
+
+[node name="shelftop" parent="." index="1"]
+material_override = ExtResource("3_j0ulu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="shelftop" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shelftop/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_lci68")
+
+[node name="shelfbottom" parent="." index="2"]
+material_override = ExtResource("3_j0ulu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="shelfbottom" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shelfbottom/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_oacqy")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bkjk6vwhl8bmp"
+path="res://.godot/imported/identify the key of this sample.mp3-c892d0813a8f2b8f7405fe31ed73a6b8.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/identify the key of this sample.mp3"
+dest_files=["res://.godot/imported/identify the key of this sample.mp3-c892d0813a8f2b8f7405fe31ed73a6b8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

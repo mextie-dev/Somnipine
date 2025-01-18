@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0s1umhf5fuhi"]
+
+[ext_resource type="PackedScene" uid="uid://b5d6b1mr4exgw" path="res://environment/assets/raw_models/model_underwaterlight.glb" id="1_ieoq6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4bwlm"]
+albedo_color = Color(0.262745, 0.713726, 1, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lepk5"]
+data = PackedVector3Array(0, -1, -0.36, 0.3118, -1, 0.18, 0, 1, 0, 0, -1, -0.36, -0.3118, -1, 0.18, 0.3118, -1, 0.18, 0.3118, -1, 0.18, -0.3118, -1, 0.18, 0, 1, 0, -0.3118, -1, 0.18, 0, -1, -0.36, 0, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lwj4n"]
+shading_mode = 0
+albedo_color = Color(0.858824, 0.74902, 1, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8ei0a"]
+data = PackedVector3Array(0, -0.5, 0, 0.4118, -0.25, -0.1338, 0, -0.25, -0.433, 0, -0.25, -0.433, 0.4118, 0.25, -0.1338, 0, 0.25, -0.433, 0, -0.25, -0.433, 0.4118, -0.25, -0.1338, 0.4118, 0.25, -0.1338, 0, 0.25, -0.433, 0.4118, 0.25, -0.1338, 0, 0.5, 0, 0, -0.5, 0, 0.2545, -0.25, 0.3503, 0.4118, -0.25, -0.1338, 0.4118, -0.25, -0.1338, 0.2545, 0.25, 0.3503, 0.4118, 0.25, -0.1338, 0.4118, -0.25, -0.1338, 0.2545, -0.25, 0.3503, 0.2545, 0.25, 0.3503, 0.4118, 0.25, -0.1338, 0.2545, 0.25, 0.3503, 0, 0.5, 0, 0, -0.5, 0, -0.2545, -0.25, 0.3503, 0.2545, -0.25, 0.3503, 0.2545, -0.25, 0.3503, -0.2545, 0.25, 0.3503, 0.2545, 0.25, 0.3503, 0.2545, -0.25, 0.3503, -0.2545, -0.25, 0.3503, -0.2545, 0.25, 0.3503, 0.2545, 0.25, 0.3503, -0.2545, 0.25, 0.3503, 0, 0.5, 0, 0, -0.5, 0, -0.4118, -0.25, -0.1338, -0.2545, -0.25, 0.3503, -0.2545, -0.25, 0.3503, -0.4118, 0.25, -0.1338, -0.2545, 0.25, 0.3503, -0.2545, -0.25, 0.3503, -0.4118, -0.25, -0.1338, -0.4118, 0.25, -0.1338, -0.2545, 0.25, 0.3503, -0.4118, 0.25, -0.1338, 0, 0.5, 0, 0, -0.5, 0, 0, -0.25, -0.433, -0.4118, -0.25, -0.1338, -0.4118, -0.25, -0.1338, 0, 0.25, -0.433, -0.4118, 0.25, -0.1338, -0.4118, -0.25, -0.1338, 0, -0.25, -0.433, 0, 0.25, -0.433, -0.4118, 0.25, -0.1338, 0, 0.25, -0.433, 0, 0.5, 0)
+
+[node name="UnderwaterLight" instance=ExtResource("1_ieoq6")]
+
+[node name="Cone" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4bwlm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cone" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cone/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_lepk5")
+
+[node name="Sphere" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_lwj4n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sphere" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sphere/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_8ei0a")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.04916, 0)
+light_color = Color(0.478431, 0.713726, 1, 1)
+light_energy = 5.0
+omni_range = 20.0

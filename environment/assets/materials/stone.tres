@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://4fvjf5cso4yx"]
+
+[ext_resource type="Texture2D" uid="uid://bfk71q5ly23bh" path="res://environment/assets/textures/Rock.png" id="1_soxed"]
+
+[resource]
+diffuse_mode = 1
+albedo_texture = ExtResource("1_soxed")
+uv1_scale = Vector3(0.7, 0.7, 0.7)
+uv1_triplanar = true
+uv1_world_triplanar = true
